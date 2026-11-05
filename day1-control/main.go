@@ -12,7 +12,7 @@ func dayType(day string) string {
 }
 
 func power(base, exp int) (int, error) {
-	if exp < -0 {
+	if exp < 0 {
 		return 0, fmt.Errorf("negative exponent %d not supported", exp)
 	}
 	result := 1
@@ -25,8 +25,8 @@ func power(base, exp int) (int, error) {
 func main() {
 	fmt.Println(dayType("Sunday"))
 
-	for _, e := range []int{3, -1} {
-		p, err := power(2, e)
+	for _, e := range []int{0, -1} {
+		p, err := power(3, e)
 		if err != nil {
 			fmt.Println("error:", err)
 			continue
