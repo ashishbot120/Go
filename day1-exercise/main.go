@@ -5,11 +5,11 @@ import "fmt"
 func classify(n int) string {
 	switch {
 	case n < 0:
-		return "Negative"
+		return "negative"
 	case n == 0:
-		return "Zero"
+		return "zero"
 	default:
-		return "Positive"
+		return "positive"
 	}
 }
 
@@ -25,7 +25,7 @@ func sumTo(n int) (int, error) {
 }
 
 func main() {
-	for _, n := range []int{5, 0, -3} {
+	for _, n := range []int{5, 0, -3, 10} {
 		class := classify(n)
 		total, err := sumTo(n)
 		if err != nil {
