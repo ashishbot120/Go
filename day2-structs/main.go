@@ -13,7 +13,7 @@ type Account struct {
 
 func (a *Account) Deposit(amount float64) error {
 	if amount <= 0 {
-		return fmt.Errorf("deposit amount must be positive")
+		return fmt.Errorf("deposit: amount must be positive, got %.2f", amount)
 	}
 	a.Balance += amount
 	return nil
@@ -24,7 +24,7 @@ func (a *Account) Withdraw(amount float64) error {
 		return fmt.Errorf("withdrawal amount must be positive")
 	}
 	if a.Balance < amount {
-		return fmt.Errorf("insufficient funds")
+		return fmt.Errorf("withdraw: insufficient funds, have %.2f, need %.2f", a.Balance, amount)
 	}
 	a.Balance -= amount
 	return nil
